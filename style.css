@@ -1,0 +1,123 @@
+.out .xdebug-error.xe-warning{
+	display: none;
+}
+.out form{
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	margin: -50px -125px;
+	width: 250px;
+}
+.out input{
+	font-size: 20px;
+	padding: 5px 10px;
+	width: 100%;
+	margin: 5px 0;
+	color: #666;
+}
+.out input:focus{
+	color: #222;
+}
+.out button{
+	height: 40px;
+	margin: 5px 0;
+	width: 276px;
+}
+.error input{
+	color: #FF0000;
+}
+
+html, body{
+	background: url('assets/noise.png');
+	height: 100%;
+	font-size: 10px;
+	font-family: Helvetica, Arial, sans-serif;
+	overflow: hidden;
+}
+#context-menu{
+	position: absolute;
+	background: rgba(0, 0, 0, 0.8);
+	border-radius: 5px;
+	border: 1px solid #000;
+	display: none;
+}
+#context-menu li{
+	font-size: 1.2em;
+	color: #FFF;
+	margin: 1px;
+	padding: 5px;
+	width: 100px;
+	border-radius: 4px;
+	border: 1px solid rgba(255, 255, 255, 0);
+	cursor: default;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-o-user-select: none;
+}
+#context-menu li:hover{
+	background: rgba(255, 255, 255, 0.1);
+	border: 1px solid rgba(255, 255, 255, 0.5);
+}
+#context-menu li:active{
+	background: transparent;
+	border: 1px solid rgba(255, 255, 255, 0.5);
+}
+#context-menu li.disabled{
+	color: #666;
+}
+#context-menu li.disabled:hover{
+	background: transparent !important;
+	border: 1px solid rgba(0, 0, 0, 0.5) !important;
+}
+.library{
+	overflow: auto;
+	resize: horizontal;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.05);
+	min-width: 245px;
+	width: 355px;
+}
+.library .images{
+	padding: 5px 0 5px 5px;
+}
+.library .images li{
+	display: inline-block;
+	padding: 5px;
+	width: 100px;
+	height: 67px;
+	float: left;
+	position: relative;
+}
+.library .images li:hover{
+	background: #FFF;
+}
+.library .images li span{
+	opacity: 1;
+	display: block;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	position: relative;
+	bottom: 0;
+	transition: height 1s, opacity 1s, top 1s;
+	-moz-transition: height 1s, opacity 1s, top 1s;
+	-webkit-transition: height 1s, opacity 1s, top 1s;
+	-o-transition: height 1s, opacity 1s, top 1s;
+}
+.library .images li.loading span{
+	background: #000;
+	opacity: 0.1;
+	top: 100%;
+}
+
+.library .images li:active span{
+	//width: 210px;
+	//height: 144px;
+}
+.dragover .drop-point{
+	background: rgba(0, 0, 255, 0.1);
+}
+.drop-point.dragover{
+	background: rgba(0, 0, 255, 0.3);
+}

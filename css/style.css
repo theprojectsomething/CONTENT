@@ -1,0 +1,318 @@
+.out .xdebug-error.xe-warning{
+	display: none;
+}
+.out form{
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	margin: -50px -125px;
+	width: 250px;
+}
+.out input{
+	font-size: 20px;
+	padding: 5px 10px;
+	width: 100%;
+	margin: 5px 0;
+	color: #666;
+}
+.out input:focus{
+	color: #222;
+}
+.out button{
+	height: 40px;
+	margin: 5px 0;
+	width: 276px;
+}
+.error input{
+	color: #FF0000;
+}
+
+html, body{
+	background: url('../assets/noise.png');
+	height: 100%;
+	font-size: 10px;
+	font-family: Helvetica, Arial, sans-serif;
+	overflow: hidden;
+}
+#context-menu{
+	position: absolute;
+	background: rgba(0, 0, 0, 0.8);
+	border-radius: 5px;
+	border: 1px solid #000;
+	display: none;
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+#context-menu li{
+	font-size: 1.2em;
+	color: #FFF;
+	margin: 1px;
+	padding: 5px;
+	width: 100px;
+	border-radius: 4px;
+	border: 1px solid rgba(255, 255, 255, 0);
+	cursor: default;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-o-user-select: none;
+}
+#context-menu li:hover{
+	background: rgba(255, 255, 255, 0.1);
+	border: 1px solid rgba(255, 255, 255, 0.5);
+}
+#context-menu li:active{
+	background: transparent;
+	border: 1px solid rgba(255, 255, 255, 0.5);
+}
+#context-menu li.disabled{
+	color: #666;
+}
+#context-menu li.disabled:hover{
+	background: transparent !important;
+	border: 1px solid rgba(0, 0, 0, 0.5) !important;
+}
+#right-area{
+	position: absolute;
+	left: auto !important;
+	right: 0 !important;
+	height: 100% !important;
+	width: 380px;
+	min-width: 245px;
+  width: 380px;
+  background: rgba(0, 0, 0, 0.05);
+  padding-left: 40px;
+  -webkit-transition: width 0.2s; 
+     -moz-transition: width 0.2s; 
+       -o-transition: width 0.2s; 
+          transition: width 0.2s;
+}
+#right-area.ui-resizable-resizing{
+	-webkit-transition: none; 
+     -moz-transition: none; 
+       -o-transition: none; 
+          transition: none;	
+}
+#right-area.inactive.ui-resizable-resizing{
+	min-width: 0 !important;
+	//width: inherit !important;
+}
+#right-area.inactive:not(.ui-resizable-resizing){
+	min-width: 0;
+	width: 0 !important;
+}
+#right-area .area-buttons{
+	position: absolute;
+	top: 5px;
+	left: 5px;
+}
+#right-area .area-buttons li{
+	display: block;
+	width: 31px;
+	height: 31px;
+	background: url('../assets/assets.png') no-repeat 0 2px;
+	opacity: 0.5;
+	cursor: pointer;
+	margin-bottom: 5px;	
+	border-radius: 1px;
+  -webkit-transition: opacity 0.2s; 
+     -moz-transition: opacity 0.2s; 
+       -o-transition: opacity 0.2s; 
+          transition: opacity 0.2s;
+}
+#right-area .area-buttons li:hover{
+	box-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
+}
+#right-area .area-buttons li.active:hover{
+	box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+}
+#right-area .area-buttons li:active{
+	opacity: 0.75 !important;
+	box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+}
+#right-area .area-buttons li.active{
+	opacity: 1;
+}
+#right-area .area-buttons li.nav-editor{
+	background-position: 0 -28px;
+}
+#right-area .area-buttons li.nav-settings{
+	background-position: 0 -57px;
+}
+#right-area .area{
+  box-shadow: 1px 0 3px rgba(0, 0, 0, 0.3) inset;
+  background: rgba(0, 0, 0, 0.1);
+}
+#right-area .area.editor{
+	font-family: "Courier New", Courier, monospace;
+	font-size: 12px;
+	line-height: 15px;
+	color: #FFF;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	background: rgba(0, 0, 0, 0.75);
+	box-shadow: 1px 0 5px rgba(0, 0, 0, 0.5) inset;
+	//cursor: text;
+	-webkit-transition: left 0.2s ease-in; 
+     -moz-transition: left 0.2s ease-in; 
+       -o-transition: left 0.2s ease-in; 
+          transition: left 0.2s ease-in;
+}
+.editor .info{
+	color: rgba(255, 255, 255, 0.25);
+  display: block;
+  font-size: 0.9em;
+  font-weight: 500;
+  margin: 7px 0 8px 45px;
+  text-transform: uppercase;
+}
+.editor .info span{
+	display: block;
+}
+.editor .scroller{
+	height: 100%;
+	overflow-y: scroll;
+	margin-right: 40px;
+}
+.editor .scroller .cursor{
+	min-height: 98%;
+	cursor: text;
+}
+@media screen and (-webkit-min-device-pixel-ratio:0){
+	#right-area{
+		min-width: 245px;
+	}
+	.library{
+		padding: 0 0 0 10px !important;
+	}
+	.library .images{
+		margin: 0 0 0 -3px;
+	}
+	.editor .scroller{
+		margin-right: 45px;
+	}
+
+
+}
+.editor .lines{
+  border-right: 1px dotted rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.23);
+  display: block;
+  width: 40px;
+  padding-left: 5px;
+  float: left;
+  -webkit-user-select: none;
+  -moz-user-select: none;  
+  -ms-user-select: none;   
+  -o-user-select: none;
+  user-select: none;
+}
+.editor .text-container{
+	overflow-x: hidden;
+	padding-right: 5px;
+}
+.editor .text-edit, .editor .text-edit-fill{
+	font-family: "Courier New", Courier, monospace;
+	color: #FFF;
+	font-size: 100%;
+	line-height: 15px;
+	resize: none;
+	background: transparent;
+	border: none;
+	outline: none;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	overflow-y: hidden;
+}
+.editor .text-edit-fill{
+	overflow: visible;
+	height: auto;
+	position: relative;
+	z-index: -1;
+	opacity: 0;
+}
+.editor .text-edit-fill pre{
+	position: absolute;
+	width: 100%;
+}
+::-moz-selection{background: #555; color: #fff; text-shadow: none;}
+::selection {background: #555; color: #fff; text-shadow: none;}
+textarea.text-edit::selection{ 
+	color: #FFF;
+	background: #555;
+}
+textarea.text-edit::-moz-selection{ 
+	color: #FFF;
+	background: #555;
+}
+textarea.text-edit::-webkit-selection{ 
+	color: #FFF;
+	background: #555;
+}
+.library{
+	height: 100%;
+	padding: 0 0 0 5px;
+}
+.library .images{
+	overflow: auto;
+	width: 100%;
+	height: 100%;
+}
+.library .images:first-child:before, .library .images:last-child:after{
+	content: "";
+	display: block;
+	height: 5px;
+}
+.library .images li{
+	display: inline-block;
+	padding: 5px;
+	width: 100px;
+	height: 67px;
+	float: left;
+	-webkit-transition: background 0.2s; 
+     -moz-transition: background 0.2s; 
+       -o-transition: background 0.2s; 
+          transition: background 0.2s;
+}
+.library .images li:first-line{
+	padding-top: 10px;
+}
+.library .images li:hover{
+	background: rgba(0, 0, 0, 0.1);
+	outline: 1px solid rgba(0, 0, 0, 0.1);
+}
+.library .images li:hover span{
+	outline: 1px solid rgba(255, 255, 255, 0.5);
+}
+.library .images li span{
+	outline: 1px solid rgba(0, 0, 0, 0.05);
+	opacity: 1;
+	display: block;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	position: relative;
+	bottom: 0;
+	transition: height 1s, opacity 1s, top 1s;
+	-moz-transition: height 1s, opacity 1s, top 1s;
+	-webkit-transition: height 1s, opacity 1s, top 1s;
+	-o-transition: height 1s, opacity 1s, top 1s;
+}
+.library .images li.loading span{
+	background: #000;
+	opacity: 0.1;
+	top: 100%;
+}
+
+.library .images li:active span{
+	//width: 210px;
+	//height: 144px;
+}
+.dragover .drop-point{
+	background: rgba(0, 0, 255, 0.1);
+}
+.drop-point.dragover{
+	background: rgba(0, 0, 255, 0.3);
+}

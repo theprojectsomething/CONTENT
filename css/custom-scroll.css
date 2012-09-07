@@ -1,0 +1,28 @@
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+ 
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+ 
+::-webkit-scrollbar-thumb{
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.4);
+}
+::-webkit-scrollbar-thumb:hover{
+	background: rgba(255, 255, 255, 0.5);
+}
+
+::-webkit-scrollbar-button:single-button{
+	background: rgba(255, 255, 255, 0.05);
+	height: 5px;
+}
+
+.editor .scroller::-webkit-scrollbar-thumb{
+  background: rgba(255, 255, 255, 0.1);
+}
+.editor .scroller::-webkit-scrollbar-thumb:hover{
+	background: rgba(255, 255, 255, 0.15);
+}
